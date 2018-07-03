@@ -12,6 +12,9 @@ import junit.framework.TestListener;
 import junit.framework.TestResult;
 import junit.runner.BaseTestRunner;
 
+/**
+ * 被观察者
+ */
 public class ResultPrinter implements TestListener {
 	PrintStream fWriter;
 	int fColumn= 0;

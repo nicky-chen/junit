@@ -111,7 +111,7 @@ public class TestSuite implements Test {
 			return;
 		}
 		names.addElement(name);
-		addTest(createTest(theClass, name));
+		addTest(createTest(theClass, name));//为每个方法增加TestCase用例
 	}
 
 	/**
@@ -201,7 +201,7 @@ public class TestSuite implements Test {
 	  		if (result.shouldStop() ) //是否停止继续运行
 	  			break;
 			Test test= (Test)e.nextElement();
-			runTest(test, result);//运行具体测试用例方法
+			runTest(test, result);//运行具体测试用例方法TestCase
 		}
 	}
 

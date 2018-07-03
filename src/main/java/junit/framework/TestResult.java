@@ -13,9 +13,9 @@ import java.util.Enumeration;
  * @see Test
  */
 public class TestResult extends Object {
-	protected Vector fFailures;
-	protected Vector fErrors;
-	protected Vector fListeners;//监听器列表
+	protected Vector fFailures; //观察者 失败信息
+	protected Vector fErrors; //观察者 错误信息
+	protected Vector fListeners;//观察者 监听器列表
 	protected int fRunTests; //总共执行测试用例的次数
 	private boolean fStop;
 	

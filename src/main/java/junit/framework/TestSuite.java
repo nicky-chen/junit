@@ -55,13 +55,13 @@ public class TestSuite implements Test {
 	 */
 	 public TestSuite(final Class theClass) {
 		fName= theClass.getName();
-		try {
+		try {//判断是否有公共的带String参数的构造器或者无参构造器，如果没有打印错误信息
 			getTestConstructor(theClass); // Avoid generating multiple error messages
 		} catch (NoSuchMethodException e) {
 			addTest(warning("Class "+theClass.getName()+" has no public constructor TestCase(String name) or TestCase()"));
 			return;
 		}
-
+		//判断类的修饰符是否是共有的，如果不是打印错误信息
 		if (!Modifier.isPublic(theClass.getModifiers())) {
 			addTest(warning("Class "+theClass.getName()+" is not public"));
 			return;
@@ -69,12 +69,12 @@ public class TestSuite implements Test {
 
 		Class superClass= theClass;
 		Vector names= new Vector();
-		while (Test.class.isAssignableFrom(superClass)) {
+		while (Test.class.isAssignableFrom(superClass)) {//判断当前class是否实现或者继承了Test类
 			Method[] methods= superClass.getDeclaredMethods();
 			for (int i= 0; i < methods.length; i++) {
 				addTestMethod(methods[i], names, theClass);
 			}
-			superClass= superClass.getSuperclass();
+			superClass= superClass.getSuperclass(); //获取父类并重复上述操作
 		}
 		if (fTests.size() == 0)
 			addTest(warning("No tests found in "+theClass.getName()));
@@ -105,7 +105,7 @@ public class TestSuite implements Test {
 		String name= m.getName();
 		if (names.contains(name))
 			return;
-		if (! isPublicTestMethod(m)) {
+		if (! isPublicTestMethod(m)) {//判断是否是无参数无返回值方法，是则加入到 names集合里
 			if (isTestMethod(m))
 				addTest(warning("Test method isn't public: "+m.getName()));
 			return;

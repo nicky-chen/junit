@@ -101,7 +101,7 @@ public abstract class BaseTestRunner implements TestListener {
 			suiteMethod= testClass.getMethod(SUITE_METHODNAME, new Class[0]);
 	 	} catch(Exception e) {
 	 		// try to extract a test suite automatically 如果没有对应的方法，则自动创建一个测试组件
-			clearStatus();
+			clearStatus(); //清除状态信息
 			return new TestSuite(testClass);
 		}
 		if (! Modifier.isStatic(suiteMethod.getModifiers())) {

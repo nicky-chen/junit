@@ -16,7 +16,7 @@ public class TestResult extends Object {
 	protected Vector fFailures;
 	protected Vector fErrors;
 	protected Vector fListeners;
-	protected int fRunTests;
+	protected int fRunTests; //总共执行测试用例的次数
 	private boolean fStop;
 	
 	public TestResult() {
@@ -97,7 +97,7 @@ public class TestResult extends Object {
 		return fFailures.elements();
 	}
 	/**
-	 * Runs a TestCase.
+	 * Runs a TestCase. 运行测试用例
 	 */
 	protected void run(final TestCase test) {
 		startTest(test);
@@ -140,15 +140,15 @@ public class TestResult extends Object {
 		return fStop;
 	}
 	/**
-	 * Informs the result that a test will be started.
+	 * Informs the result that a test will be started. 通知result 测试用例即将开始
 	 */
 	public void startTest(Test test) {
-		final int count= test.countTestCases();
+		final int count= test.countTestCases(); //计算执行测试用例的个数
 		synchronized(this) {
 			fRunTests+= count;
 		}
 		for (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {
-			((TestListener)e.nextElement()).startTest(test);
+			((TestListener)e.nextElement()).startTest(test); //执行测试
 		}
 	}
 	/**

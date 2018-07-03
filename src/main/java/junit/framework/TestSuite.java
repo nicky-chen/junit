@@ -28,7 +28,7 @@ import java.lang.reflect.Constructor;
  * @see Test
  */
 public class TestSuite implements Test {
-
+    //testCase集合
 	private Vector fTests= new Vector(10);
 	private String fName;
 
@@ -193,15 +193,15 @@ public class TestSuite implements Test {
 	 }
 	 
 	/**
-	 * Runs the tests and collects their result in a TestResult.
+	 * Runs the tests and collects their result in a TestResult. 运行测试用例并返回结果集
 	 */
 	@Override
 	public void run(TestResult result) {
-		for (Enumeration e= tests(); e.hasMoreElements(); ) {
-	  		if (result.shouldStop() )
+		for (Enumeration e= tests(); e.hasMoreElements(); ) {//遍历测试方法
+	  		if (result.shouldStop() ) //是否停止继续运行
 	  			break;
 			Test test= (Test)e.nextElement();
-			runTest(test, result);
+			runTest(test, result);//运行具体测试用例方法
 		}
 	}
 

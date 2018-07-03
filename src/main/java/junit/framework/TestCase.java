@@ -118,7 +118,7 @@ public abstract class TestCase extends Assert implements Test {
 		result.run(this);
 	}
 	/**
-	 * Runs the bare test sequence.
+	 * Runs the bare test sequence. 运行一个空测试序列
 	 * @exception Throwable if any exception is thrown
 	 */
 	public void runBare() throws Throwable {

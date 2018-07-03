@@ -15,7 +15,7 @@ import java.util.Enumeration;
 public class TestResult extends Object {
 	protected Vector fFailures;
 	protected Vector fErrors;
-	protected Vector fListeners;
+	protected Vector fListeners;//监听器列表
 	protected int fRunTests; //总共执行测试用例的次数
 	private boolean fStop;
 	
@@ -106,7 +106,7 @@ public class TestResult extends Object {
 				test.runBare();
 			}
 		};
-		runProtected(test, p);
+		runProtected(test, p);//执行test方法
 
 		endTest(test);
 	}

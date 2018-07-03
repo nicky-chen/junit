@@ -23,7 +23,7 @@ import junit.runner.*;
  * summary at the end. 
  */
 public class TestRunner extends BaseTestRunner {
-	private ResultPrinter fPrinter;
+	private ResultPrinter fPrinter; //监听器
 	
 	public static final int SUCCESS_EXIT= 0;
 	public static final int FAILURE_EXIT= 1;

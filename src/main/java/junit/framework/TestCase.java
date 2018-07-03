@@ -122,9 +122,9 @@ public abstract class TestCase extends Assert implements Test {
 	 * @exception Throwable if any exception is thrown
 	 */
 	public void runBare() throws Throwable {
-		setUp();
+		setUp(); //运行setup
 		try {
-			runTest();
+			runTest(); //运行具体测试方法
 		}
 		finally {
 			tearDown();

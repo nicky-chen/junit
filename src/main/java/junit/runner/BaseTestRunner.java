@@ -102,7 +102,7 @@ public abstract class BaseTestRunner implements TestListener {
 	 	} catch(Exception e) {
 	 		// try to extract a test suite automatically 如果没有对应的方法，则自动创建一个测试组件
 			clearStatus(); //清除状态信息
-			return new TestSuite(testClass);
+			return new TestSuite(testClass);  //创建testsuite对象 包含需要测试方法集合的Vector
 		}
 		if (! Modifier.isStatic(suiteMethod.getModifiers())) {
 			runFailed("Suite() method must be static");

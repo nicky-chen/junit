@@ -28,7 +28,7 @@ import java.lang.reflect.Constructor;
  * @see Test
  */
 public class TestSuite implements Test {
-    //testCase集合
+    //testCase集合 包含所有的测试用例
 	private Vector fTests= new Vector(10);
 	private String fName;
 
@@ -71,7 +71,7 @@ public class TestSuite implements Test {
 		Vector names= new Vector();
 		while (Test.class.isAssignableFrom(superClass)) {//判断当前class是否实现或者继承了Test类
 			Method[] methods= superClass.getDeclaredMethods();
-			for (int i= 0; i < methods.length; i++) {
+			for (int i= 0; i < methods.length; i++) {//遍历继承TestCase方法的类中包含的test方法
 				addTestMethod(methods[i], names, theClass);
 			}
 			superClass= superClass.getSuperclass(); //获取父类并重复上述操作

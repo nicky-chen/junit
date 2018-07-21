@@ -169,7 +169,7 @@ public class TestRunner extends BaseTestRunner {
 			throw new Exception("Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class");
 		//获取测试组件
 		try {
-			Test suite= getTest(testCase);
+			Test suite= getTest(testCase); //初始化 TestSuite
 			return doRun(suite, wait); //运行测试组件
 		}
 		catch(Exception e) {

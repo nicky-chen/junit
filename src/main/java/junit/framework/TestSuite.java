@@ -61,7 +61,7 @@ public class TestSuite implements Test {
 			addTest(warning("Class "+theClass.getName()+" has no public constructor TestCase(String name) or TestCase()"));
 			return;
 		}
-		//判断类的修饰符是否是共有的，如果不是打印错误信息
+		//判断类的修饰符是否是public的，如果不是打印错误信息
 		if (!Modifier.isPublic(theClass.getModifiers())) {
 			addTest(warning("Class "+theClass.getName()+" is not public"));
 			return;

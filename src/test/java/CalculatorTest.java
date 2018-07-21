@@ -39,6 +39,7 @@ public class CalculatorTest extends TestCase {
     }
 
     public void testAdd() {
+        System.out.println("testAdd");
         int result = calculator.add(1, 2);
         System.out.println(result);
         // 判断方法的返回结果
@@ -46,6 +47,7 @@ public class CalculatorTest extends TestCase {
     }
 
     public void testSubtract() {
+        System.out.println("testSubtract");
         int result = calculator.subtract(1, 2);
         // 判断方法的返回结果
         Assert.assertEquals(-1, result);// 第一个参数是期望值，第二个参数是要验证的值
@@ -53,13 +55,15 @@ public class CalculatorTest extends TestCase {
     }
 
     public void testMultiply() {
+        System.out.println("testMultiply");
         int result = calculator.multiply(2, 3);
         // 判断方法的返回结果
-        Assert.assertEquals(6, result);// 第一个参数是期望值，第二个参数是要验证的值
+        Assert.assertEquals(5, result);// 第一个参数是期望值，第二个参数是要验证的值
 
     }
 
     public void testDivide() {
+        System.out.println("testDivide");
         int result = calculator.divide(12, 3);
         // 判断方法的返回结果
         Assert.assertEquals(4, result);// 第一个参数是期望值，第二个参数是要验证的值

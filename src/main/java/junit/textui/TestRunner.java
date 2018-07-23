@@ -111,7 +111,7 @@ public class TestRunner extends BaseTestRunner {
 	
 	public TestResult doRun(Test suite, boolean wait) {
 		TestResult result= createTestResult();
-		result.addListener(fPrinter); //增加一个打印监听器
+		result.addListener(fPrinter); //增加一个TestRunner的打印监听器
 		long startTime= System.currentTimeMillis();
 		suite.run(result);
 		long endTime= System.currentTimeMillis();

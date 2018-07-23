@@ -13,9 +13,9 @@ import java.util.Enumeration;
  * @see Test
  */
 public class TestResult extends Object {
-	protected Vector fFailures; //观察者 失败信息
-	protected Vector fErrors; //观察者 错误信息
-	protected Vector fListeners;//观察者 监听器列表
+	protected Vector fFailures; //观察者 失败信息 TestFailure对象
+	protected Vector fErrors; //观察者 错误信息 TestFailure 对象
+	protected Vector fListeners;//观察者 监听器列表 TestListener
 	protected int fRunTests; //总共执行测试用例的次数
 	private boolean fStop;
 	
@@ -124,7 +124,7 @@ public class TestResult extends Object {
 			p.protect();
 		} 
 		catch (AssertionFailedError e) {
-			addFailure(test, e);
+			addFailure(test, e); //如果计算结果和assert预期结果不一样，则出现这个错误
 		}
 		catch (ThreadDeath e) { // don't catch ThreadDeath by accident
 			throw e;

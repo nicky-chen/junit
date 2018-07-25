@@ -34,6 +34,7 @@ public class CalculatorTest extends TestCase {
     public void setUp() throws Exception
     {
         System.out.println("set up ");
+        System.out.println("set");
         // 生成成员变量的实例
         calculator = new Calculator();
     }

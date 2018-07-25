@@ -33,7 +33,7 @@ public class CalculatorTest extends TestCase {
     @Override
     public void setUp() throws Exception
     {
-        System.out.println("set up");
+        System.out.println("set up ");
         // 生成成员变量的实例
         calculator = new Calculator();
     }
